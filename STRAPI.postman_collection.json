@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "4194a763-6332-466f-bf3a-d0221052d9e1",
+		"name": "STRAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18860036"
+	},
+	"item": [
+		{
+			"name": "Get All Vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1337/api/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Vehicles with Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1337/api/vehicles?populate=category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"vehicles"
+					],
+					"query": [
+						{
+							"key": "populate",
+							"value": "category"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Vehicle with category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n  \"data\": {\n    \"Name\": \"My Car 3\",\n    \"Number\": \"MYNUMBER123\",\n    \"category\": {\n      \"id\": 3\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
